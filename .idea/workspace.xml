@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9e22d5d-3800-4764-bde9-8a15cdf797b8" name="Changes" comment="Commit for find the changes">
+    <list default="true" id="d9e22d5d-3800-4764-bde9-8a15cdf797b8" name="Changes" comment="Final commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YTcutter/descargador.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/YTcutter/ffmpeg.exe" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/ffmpeg.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prepareRefereeVideo.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/referee17february.pt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/refereeDetection.ipynb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,21 +25,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.RefereeDetection.executor&quot;: &quot;Run&quot;,
-    &quot;Python.descargador.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/JJTEZANOS/PycharmProjects/Security/RefereeDetection&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.RefereeDetection.executor": "Run",
+    "Python.descargador.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/JJTEZANOS/PycharmProjects/scientificProject",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\JJTEZANOS\PycharmProjects\Security\RefereeDetection" />
@@ -157,7 +152,7 @@
       <workItem from="1743191468147" duration="34000" />
       <workItem from="1743218996203" duration="1453000" />
       <workItem from="1744247441525" duration="16565000" />
-      <workItem from="1744391656503" duration="1287000" />
+      <workItem from="1744391656503" duration="3422000" />
     </task>
     <task id="LOCAL-00001" summary="Commit for find the changes">
       <option name="closed" value="true" />
@@ -167,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743140954326</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Final commit">
+      <option name="closed" value="true" />
+      <created>1744394934875</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1744394934875</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,7 +189,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit for find the changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit for find the changes" />
+    <MESSAGE value="Final commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
