@@ -30,13 +30,13 @@ The model has been trained using a carefully curated dataset of referee signals 
 
 **Explanation:**
 
-- **Box Loss, Object Loss, Class Loss:**  
-  These three plots show the evolution of the loss values during model training over 50 epochs. Lower values indicate a better fit of the model to the training data. The losses remain relatively stable for most of the training, with an increase at the end, likely due to overfitting or changes in the validation set.
+- **Model Performance (mAP):**
+  The top plot shows the evolution of the main performance metric: mAP (mean Average Precision), both overall and at an IoU threshold of 0.5, over 350 epochs. The model quickly reaches a high mAP and maintains it throughout training, indicating strong and stable detection and classification performance for referee signals.
 
-- **Model Performance (mAP):**  
-  The bottom plot shows the main performance metric: mAP (mean Average Precision), both overall and at an IoU threshold of 0.5. The model maintains a high mAP (around 0.8) for most of the training, indicating good detection and classification capability for referee signals. The drop at the end may be due to overfitting or variations in the validation set.
+- **Box Loss, Class Loss, Object Loss:**
+  The three lower plots show the evolution of the loss values during model training. All losses decrease rapidly in the early epochs and stabilize at low values, with occasional spikes. This indicates that the model is learning effectively and converging well, with only minor fluctuations.
 
-These metrics reflect that the model is able to effectively learn to detect and classify referee signals, although monitoring for overfitting is recommended in future iterations.
+These metrics reflect that the model is able to effectively learn to detect and classify referee signals, achieving high and stable performance across a long training period.
 
 ## System Architecture
 
@@ -177,7 +177,9 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-[Add your license information here]
+This project is licensed under the MIT License. You are free to use, modify, and distribute this software, provided that the original copyright and license notice are included in all copies or substantial portions of the software.
+
+See the LICENSE file for more details, or feel free to change the license to one that better fits your needs.
 
 ## Author
 
