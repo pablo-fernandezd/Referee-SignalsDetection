@@ -97,6 +97,34 @@ This system processes video files to detect and track referees, creating segment
 - PyTorch
 - Ultralytics YOLO
 
+## Web Application
+
+This project now includes a web application for referee and signal detection, enabling interactive annotation and data collection for model retraining. The web application is built with a Flask backend and a React frontend, facilitating the following workflow:
+
+- **Image Upload:** Users can upload images for analysis.
+- **Referee Detection & Cropping:** The system automatically detects referees and proposes a crop. Users can confirm or manually correct this crop.
+- **Signal Detection & Confirmation:** After referee confirmation, the cropped image is processed for signal detection. Users can then confirm or correct the predicted signal, providing valuable feedback for model retraining.
+- **Data Collection for Retraining:** All confirmed and corrected referee crops and signal detections (including precise bounding box annotations) are saved to dedicated training data folders, along with YOLO-formatted labels.
+- **Duplicate Prevention:** An MD5 hash-based mechanism ensures that duplicate original images are not saved multiple times, preventing data overfitting and maintaining dataset integrity.
+- **Visual Feedback:** The cropped referee image is displayed during signal confirmation, allowing users to visually verify the detection.
+
+### Backend (`backend/app.py`)
+- **Duplicate Prevention:** Implemented a robust deduplication mechanism using MD5 hashes for original uploaded images, preventing redundant saving of referee crops and signal data to the training folders (`data/referee_training_data`, `data/signal_training_data`).
+- **File Naming Consistency:** Resolved `FileExistsError` by introducing timestamp-based unique filenames for auto-cropped and manually cropped referee images, as well as for saved signal data.
+- **Signal Bounding Box Handling:** The `/api/process_signal` endpoint now includes the predicted normalized YOLO bounding box (`bbox_xywhn`) in its response. The `/api/confirm_signal` endpoint now correctly receives and utilizes this `signal_bbox_yolo` for precise label saving.
+- **Image Serving:** Added a new Flask endpoint (`/api/referee_crop_image/<filename>`) to serve referee crop images directly from the training data folder, enabling frontend visualization.
+
+### Backend (`backend/models/inference.py`)
+- **Bounding Box Output:** The `detect_signal` function was updated to return the normalized bounding box (`bbox_xywhn`) of the detected signal, providing more detailed prediction information.
+
+### Frontend (`frontend/src/App.js`)
+- **Data Flow Improvement:** Modified to correctly pass the `bbox_xywhn` from signal detection results to the `SignalConfirmation` component and subsequently to the backend's `confirm_signal` endpoint.
+- **Visual Feedback Preparation:** Now passes the `cropFilenameForSignal` to the `SignalConfirmation` component.
+
+### Frontend (`frontend/src/components/SignalConfirmation.js`)
+- **User Experience Enhancement:** Displays the referee crop image during the signal confirmation step, allowing users to visually compare the detection with the original cropped area for more accurate feedback and labeling.
+- **Data Integration:** Accepts and forwards the `signalBbox` prop to the `onConfirm` callback.
+
 ## Installation
 
 1. Install FFmpeg:
