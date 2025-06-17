@@ -165,7 +165,6 @@ def confirm_signal():
     """El usuario confirma o corrige la predicción de señal."""
     data = request.json
     crop_filename_for_signal = data.get('crop_filename_for_signal') # This is the referee crop
-    correct = data.get('correct')
     selected_class = data.get('selected_class')
     # New: Get the signal_bbox_yolo from the frontend, if available
     signal_bbox_yolo = data.get('signal_bbox_yolo') 
@@ -194,7 +193,7 @@ def confirm_signal():
 
     # Save the referee crop image and its signal label in SIGNAL_TRAINING_DATA_FOLDER
     timestamp = datetime.now().strftime("%Y%m%d%H%M%S_%f") # Add microseconds for higher uniqueness
-    signal_dest_filename = f"signal_{crop_filename_for_signal.replace("referee_auto_", "").replace("referee_manual_", "").rsplit('.', 1)[0]}_{timestamp}.png"
+    signal_dest_filename = f"signal_{crop_filename_for_signal.replace('referee_auto_', '').replace('referee_manual_', '').rsplit('.', 1)[0]}_{timestamp}.png"
     signal_dest_path = os.path.join(SIGNAL_TRAINING_DATA_FOLDER, signal_dest_filename)
 
     cv2.imwrite(signal_dest_path, referee_crop_img) # Save the referee crop
