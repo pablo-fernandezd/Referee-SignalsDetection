@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import './ManualCrop.css'; // Import the CSS file
 
 const REFEREE_CLASSES = [
   { name: 'referee', id: 0 }, // Assuming 'referee' is class 0 in your YOLO model
@@ -90,7 +91,7 @@ const ManualCrop = ({ imageFile, onSubmit }) => {
   };
 
   return (
-    <div>
+    <div className="manual-crop-container">
       <h3>Draw a rectangle around the referee and select the class</h3>
       <canvas
         ref={canvasRef}
@@ -99,14 +100,14 @@ const ManualCrop = ({ imageFile, onSubmit }) => {
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
       />
-      <div style={{ marginTop: 10 }}>
+      <div className="manual-crop-controls">
         <label>Class:&nbsp;</label>
         <select value={selectedClass} onChange={e => setSelectedClass(e.target.value)}>
           {REFEREE_CLASSES.map(cls => (
             <option key={cls.name} value={cls.name}>{cls.name}</option>
           ))}
         </select>
-        <button onClick={handleSubmit} style={{ marginLeft: 10 }}>Submit</button>
+        <button onClick={handleSubmit}>Submit</button>
       </div>
     </div>
   );

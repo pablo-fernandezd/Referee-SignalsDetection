@@ -1,0 +1,64 @@
+.manual-crop-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.manual-crop-container h3 {
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.manual-crop-container canvas {
+  border: 2px solid #007bff; /* Blue border for the canvas */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  height: auto;
+  display: block; /* Ensures it behaves like a block element for margin auto */
+  margin-bottom: 20px; /* Space below the canvas */
+}
+
+.manual-crop-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.manual-crop-controls label {
+  font-weight: normal; /* Override global bold for labels */
+  margin-bottom: 0;
+  display: inline-block;
+}
+
+.manual-crop-controls select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  background-color: #fff;
+  min-width: 120px; /* Ensure select box has a minimum width */
+}
+
+.manual-crop-controls button {
+  padding: 10px 25px;
+  font-size: 1.1em;
+  background-color: #007bff; /* Primary blue for submit */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.manual-crop-controls button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+} 

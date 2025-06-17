@@ -3,6 +3,7 @@ import UploadForm from './components/UploadForm';
 import CropConfirmation from './components/CropConfirmation';
 import ManualCrop from './components/ManualCrop';
 import SignalConfirmation from './components/SignalConfirmation';
+import './App.css';
 
 function App() {
   const [step, setStep] = useState(0);
@@ -104,7 +105,7 @@ function App() {
   };
 
   return (
-    <div style={{ maxWidth: 600, margin: '40px auto', padding: 20 }}>
+    <div className="app-container">
       <h2>Referee & Signal Detection</h2>
       {step === 0 && <UploadForm onUpload={handleUpload} />}
       {step === 1 && cropUrl && (

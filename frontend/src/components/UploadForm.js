@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import './UploadForm.css';
 
 const UploadForm = ({ onUpload }) => {
   const fileInput = useRef();
@@ -18,7 +19,7 @@ const UploadForm = ({ onUpload }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="upload-form">
       <label>Upload a referee image:</label>
       <input type="file" accept="image/*" ref={fileInput} />
       <button type="submit">Upload</button>

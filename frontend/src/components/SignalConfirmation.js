@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './SignalConfirmation.css';
 
 const SIGNAL_CLASSES = [
   'armLeft', 'armRight', 'hits', 'leftServe', 'net', 'outside', 'rightServe', 'touched', 'none'
@@ -20,16 +21,16 @@ const SignalConfirmation = ({ predictedClass, confidence, signalBbox, cropFilena
   const refereeCropImageUrl = cropFilenameForSignal ? `http://localhost:5000/api/referee_crop_image/${cropFilenameForSignal}` : null;
 
   return (
-    <div>
+    <div className="signal-confirmation-container">
       <h3>Signal Prediction</h3>
       {refereeCropImageUrl && (
-        <div style={{ marginBottom: 20 }}>
+        <div className="referee-crop-display">
           <h4>Referee Crop:</h4>
-          <img src={refereeCropImageUrl} alt="Referee Crop" style={{ maxWidth: '100%', height: 'auto' }} />
+          <img src={refereeCropImageUrl} alt="Referee Crop" />
         </div>
       )}
-      <p>Predicted: <b>{predictedClass}</b> (Confidence: {(confidence * 100).toFixed(1)}%)</p>
-      <div>
+      <p className="signal-prediction-info">Predicted: <b>{predictedClass}</b> (Confidence: {(confidence * 100).toFixed(1)}%)</p>
+      <div className="signal-feedback-options">
         <label>
           <input
             type="radio"
@@ -38,7 +39,7 @@ const SignalConfirmation = ({ predictedClass, confidence, signalBbox, cropFilena
           />
           Correct
         </label>
-        <label style={{ marginLeft: 20 }}>
+        <label>
           <input
             type="radio"
             checked={!isCorrect}
@@ -48,7 +49,7 @@ const SignalConfirmation = ({ predictedClass, confidence, signalBbox, cropFilena
         </label>
       </div>
       {!isCorrect && (
-        <div style={{ marginTop: 10 }}>
+        <div className="signal-correct-class-selection">
           <label>Select correct class:&nbsp;</label>
           <select value={selectedClass} onChange={e => setSelectedClass(e.target.value)}>
             {SIGNAL_CLASSES.map(cls => (
@@ -57,7 +58,7 @@ const SignalConfirmation = ({ predictedClass, confidence, signalBbox, cropFilena
           </select>
         </div>
       )}
-      <button onClick={handleSubmit} style={{ marginTop: 15 }}>Submit</button>
+      <button onClick={handleSubmit}>Submit</button>
     </div>
   );
 };

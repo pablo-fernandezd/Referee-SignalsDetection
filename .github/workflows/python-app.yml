@@ -18,6 +18,21 @@ jobs:
         working-directory: backend
     steps:
     - uses: actions/checkout@v3
+      with:
+        lfs: true # Ensure Git LFS files are checked out
+    - name: Install Git LFS
+      run: | # Install Git LFS
+        sudo apt-get update
+        sudo apt-get install git-lfs
+        git lfs install
+    - name: Pull Git LFS files
+      run: git lfs pull # Pull LFS files explicitly
+    - name: Debug LFS file status
+      run: |
+        echo "Checking bestRefereeDetection.pt file status:"
+        ls -lh ../models/bestRefereeDetection.pt
+        echo "Listing Git LFS tracked files:"
+        git lfs ls-files
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
